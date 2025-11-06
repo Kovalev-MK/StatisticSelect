@@ -8,15 +8,15 @@
 
 2 В классе Variables заполнить соотвествующие поля:
 
-	+ SqlStatistic - sql запрос по сбору статистики
+	SqlStatistic - sql запрос по сбору статистики
 	
-	+ SystemDBName - название системной БД
+	SystemDBName - название системной БД
 	
-	+ SSLRootCert - корневой SSL сертификат
+	SSLRootCert - корневой SSL сертификат
 	
-	+ SSLCert - SSL сертификат
+	SSLCert - SSL сертификат
 	
-	+ SSLKey - приватный ключ
+	SSLKey - приватный ключ
 	
 3 Запустить приложение
 
