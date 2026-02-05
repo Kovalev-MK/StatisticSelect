@@ -1,6 +1,7 @@
 ﻿using Npgsql;
 using ClosedXML.Excel;
 using StatisticSelect;
+using DocumentFormat.OpenXml.Spreadsheet;
 
 class Program
 {
@@ -41,9 +42,10 @@ class Program
               }
 
               var row = statisticSheet.LastRowUsed()!.RowNumber() + 1;
+              statisticSheet.Cell(row, 1).Value = dbName;
               for (int col = 0; col < reader.FieldCount; col++)
               {
-                statisticSheet.Cell(row, col + 1).Value = reader[col].ToString();
+                statisticSheet.Cell(row, col + 2).Value = reader[col].ToString();
               }
             }
           }
@@ -70,10 +72,11 @@ class Program
 
   private static void FillColumnNames(NpgsqlDataReader reader, IXLWorksheet sheet)
   {
+    sheet.Cell(1, 1).Value = "dbName";
     for (int i = 0; i < reader.FieldCount; i++)
     {
       string columnName = reader.GetName(i);
-      sheet.Cell(1, i + 1).Value = columnName;
+      sheet.Cell(1, i + 2).Value = columnName;
     }
   }
 
@@ -105,8 +108,8 @@ class Program
   private static string GetConnectionString(string dbName)
   {
     var sb = new NpgsqlConnectionStringBuilder();
-    sb.Host = "teleport.directum24.ru";
-    sb.Port = 443;
+    sb.Host = "127.0.0.1";
+    sb.Port = 61243; //443;
     sb.Username = "adviser";
     sb.Password = "YUTebh7263ukg%$^yjthgff";
     sb.SslMode = SslMode.VerifyFull;
