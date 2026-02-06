@@ -109,9 +109,9 @@ class Program
   {
     var sb = new NpgsqlConnectionStringBuilder();
     sb.Host = "127.0.0.1";
-    sb.Port = 61243; //443;
+    sb.Port = Variables.Port;
     sb.Username = "adviser";
-    sb.Password = "YUTebh7263ukg%$^yjthgff";
+    sb.Password = Variables.Password;
     sb.SslMode = SslMode.VerifyFull;
     sb.RootCertificate = Variables.SSLRootCert;
     sb.SslKey = Variables.SSLKey;

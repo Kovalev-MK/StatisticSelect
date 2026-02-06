@@ -40,5 +40,8 @@ where scr.sid in (
     public const string SSLRootCert = @"C:\Users\kovalev_mk\.tsh\keys\teleport.directum24.ru\cas\tele.example.com.pem";
     public const string SSLCert = @"C:\Users\kovalev_mk\.tsh\keys\teleport.directum24.ru\kovalev_mk-db\tele.example.com\mt02-ub-x509.pem";
     public const string SSLKey = @"C:\Users\kovalev_mk\.tsh\keys\teleport.directum24.ru\kovalev_mk";
+
+    public const int Port = 61243;
+    public const string Password = "";
   }
 }
